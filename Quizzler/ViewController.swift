@@ -2,8 +2,7 @@
 //  ViewController.swift
 //  Quizzler
 //
-//  Created by Angela Yu on 25/08/2015.
-//  Copyright (c) 2015 London App Brewery. All rights reserved.
+//
 //
 
 import UIKit
@@ -45,7 +44,7 @@ class ViewController: UIViewController {
         checkAnswer()
         
         questionNumber = questionNumber + 1
-        questionLabel.text = allQuestions.list[questionNumber].queationText   
+        nextQuestion()
        
         
     }
@@ -57,7 +56,14 @@ class ViewController: UIViewController {
     
 
     func nextQuestion() {
-        
+        if questionNumber <= 12 {
+        questionLabel.text = allQuestions.list[questionNumber].queationText
+       
+        }
+        else {
+            print(" You are end of Quize")
+            questionNumber = 0
+        }
     }
     
     

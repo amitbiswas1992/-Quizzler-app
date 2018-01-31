@@ -2,8 +2,7 @@
 //  QuestionBank.swift
 //  Quizzler
 //
-//  Created by MazeGeek on 1/18/18.
-//  Copyright © 2018 London App Brewery. All rights reserved.
+//  
 //
 
 import Foundation
