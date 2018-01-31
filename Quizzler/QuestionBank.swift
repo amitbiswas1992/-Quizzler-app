@@ -15,7 +15,7 @@ class QuestionBank{
     
     init(){
         // Creating a quiz item and appending it to the list
-        let item = Question(text: "Valentine\'s day is banned in Saudi Arabia.", corectAnswer: true)
+        let item = Question(text: "Valentine\'s day is banned in Saudi Arabia.", corectAnswer: true)  // append for adding element to the array
         
         // Add the Question to the list of questions
         list.append(item)
