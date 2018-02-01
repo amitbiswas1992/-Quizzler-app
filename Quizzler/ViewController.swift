@@ -61,8 +61,16 @@ class ViewController: UIViewController {
        
         }
         else {
-            print(" You are end of Quize")
-            questionNumber = 0
+            let alert = UIAlertController(title: "Awesome ", message: "You have finished the quize, do you want to start over", preferredStyle: .alert)
+            
+            let restartAction = UIAlertAction(title: "Restart", style: .default, handler: {(UIAlertAction) in
+                self.startOver()
+            })
+            
+            
+            alert.addAction(restartAction)
+            present(alert, animated: true, completion: nil)
+            
         }
     }
     
@@ -82,6 +90,9 @@ class ViewController: UIViewController {
     
     
     func startOver() {
+        
+        questionNumber = 0
+        nextQuestion()
        
     }
     
