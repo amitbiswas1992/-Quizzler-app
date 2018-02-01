@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var pickedAnswer : Bool = false
     
     var questionNumber : Int = 0
+    var score : Int = 0
     
     
     @IBOutlet weak var questionLabel: UILabel!
@@ -25,8 +26,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let firstQuestion = allQuestions.list[0]
-        questionLabel.text = firstQuestion.queationText
+     nextQuestion()
         
     }
 
@@ -51,6 +51,8 @@ class ViewController: UIViewController {
     
     
     func updateUI() {
+        
+        scoreLabel.text = "Score:\(score)"
       
     }
     
@@ -58,6 +60,8 @@ class ViewController: UIViewController {
     func nextQuestion() {
         if questionNumber <= 12 {
         questionLabel.text = allQuestions.list[questionNumber].queationText
+            
+            updateUI()
        
         }
         else {
@@ -78,10 +82,12 @@ class ViewController: UIViewController {
     func checkAnswer() {
     let correctAnswer = allQuestions.list[questionNumber].answer
         
-        if correctAnswer == pickedAnswer{
+        if correctAnswer == pickedAnswer {
             print ("Yes! You got it ")
+            score += 10       // Increase score value If the answer is correct
         }
         else {
+            
             print ("Wrong Answer")
         }
       
